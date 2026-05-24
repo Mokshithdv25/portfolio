@@ -9,7 +9,7 @@ export function About() {
   return (
     <section id="about" className="px-6 md:px-10 py-24 md:py-32">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-5" data-reveal="left">
           <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground mb-6 border-b border-border pb-4">
             Trajectory
           </h2>
@@ -29,6 +29,8 @@ export function About() {
             {timeline.map((t, i) => (
               <li
                 key={t.year + t.title}
+                data-reveal="right"
+                style={{ ["--reveal-delay" as string]: `${i * 120}ms` }}
                 className="grid grid-cols-[80px_1fr] gap-6 py-6 border-b border-border last:border-b-0 group"
               >
                 <div className="font-mono text-sm text-muted-foreground group-hover:text-accent transition-colors">
