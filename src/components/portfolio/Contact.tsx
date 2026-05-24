@@ -2,7 +2,7 @@ export function Contact() {
   return (
     <section id="contact" className="px-6 md:px-10 pt-24 pb-12">
       <div className="max-w-7xl mx-auto text-center">
-        <div className="inline-block mb-12 animate-float">
+        <div data-reveal="scale" className="inline-block mb-12 animate-float">
           <div className="p-px rounded-3xl bg-gradient-to-tr from-accent via-accent-glow to-blue-400">
             <div className="bg-base px-8 md:px-16 py-14 md:py-20 rounded-3xl">
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">

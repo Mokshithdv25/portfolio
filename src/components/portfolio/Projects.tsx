@@ -33,7 +33,7 @@ export function Projects() {
   return (
     <section id="systems" className="px-6 md:px-10 mb-32 md:mb-40">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-end justify-between mb-12 border-b border-border pb-6">
+        <div data-reveal className="flex items-end justify-between mb-12 border-b border-border pb-6">
           <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
             Selected Architectural Work
           </h2>
@@ -46,6 +46,8 @@ export function Projects() {
           {projects.map((p, i) => (
             <article
               key={p.n}
+              data-reveal="scale"
+              style={{ ["--reveal-delay" as string]: `${i * 120}ms` }}
               className={`glass-card rounded-2xl p-6 md:p-8 group ${
                 i === 2 ? "md:col-span-2" : ""
               }`}

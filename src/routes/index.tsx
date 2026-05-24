@@ -5,6 +5,7 @@ import { Projects } from "@/components/portfolio/Projects";
 import { Capabilities } from "@/components/portfolio/Capabilities";
 import { About } from "@/components/portfolio/About";
 import { Contact } from "@/components/portfolio/Contact";
+import { useReveal, useScrollProgress } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -26,8 +27,15 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const rootRef = useReveal<HTMLDivElement>();
+  const progressRef = useScrollProgress();
+
   return (
-    <div className="relative min-h-screen bg-background text-foreground font-sans selection:bg-accent/30 selection:text-foreground overflow-x-hidden">
+    <div
+      ref={rootRef}
+      className="relative min-h-screen bg-background text-foreground font-sans selection:bg-accent/30 selection:text-foreground overflow-x-hidden"
+    >
+      <div ref={progressRef} className="scroll-progress" />
       <Nav />
       <main>
         <Hero />
