@@ -5,27 +5,35 @@ import vectorImg from "@/assets/project-vector.jpg";
 const projects = [
   {
     n: "01",
-    title: "Neural-Sync RAG",
-    tag: "Retrieval Architecture",
-    desc: "Hybrid retrieval system for a Fortune 500 financial suite — reduced hallucination rates by 42% with citation-grounded synthesis across 1M+ documents.",
+    title: "Production RAG Contract Intelligence",
+    tag: "Query Routing · Re-Ranking",
+    desc: "Hybrid RAG + relational search over 1,000+ supplier contracts, designed with query rewriting, source routing, sub-query decomposition, and re-ranking to surface liability without hallucinating in high-stakes decisions.",
     img: ragImg,
-    stack: ["LlamaIndex", "Pinecone", "Claude 3.5"],
+    stack: ["LangGraph", "pgvector", "BGE Reranker", "SQL"],
   },
   {
     n: "02",
-    title: "Agentic Workflow Engine",
-    tag: "Multi-Agent Orchestration",
-    desc: "Autonomous swarm architecture for multi-step supply-chain decisioning. 12 specialised agents collaborating via shared state machine.",
+    title: "EchoMind Agentic RevOps Engine",
+    tag: "Graph Orchestration",
+    desc: "Multi-agent content workflow for GTM teams: scraper, grader, RAG validator, LLM generator, and QA loop with stateful handoffs to raise content pass rate toward 85% while controlling hallucination risk.",
     img: agentsImg,
-    stack: ["LangGraph", "GPT-4o", "FastAPI"],
+    stack: ["LangGraph", "PRAW", "Vector DB", "GA4 / GSC"],
   },
   {
     n: "03",
-    title: "Semantic Vector Router",
-    tag: "LLM Optimisation",
-    desc: "Low-latency classification layer cutting enterprise inference cost by 40% via intelligent prompt caching and embedding-based routing.",
+    title: "LLMOps Guardrail Evaluation Pipeline",
+    tag: "Reliability · Safety",
+    desc: "CI-style evaluation layer for RAG and agent systems: malicious-prompt stress tests, faithfulness scoring, answer relevance, context precision, and dashboard exports so model behavior is tested like production software.",
     img: vectorImg,
-    stack: ["ONNX", "Redis", "PyTorch"],
+    stack: ["Ragas", "TruLens", "NeMo Guardrails", "W&B"],
+  },
+  {
+    n: "04",
+    title: "Local Fine-Tuning Optimization Lab",
+    tag: "QLoRA · Quantization",
+    desc: "Build track for privacy-sensitive domain models: fine-tune Llama or Mistral on niche documentation with QLoRA, track loss and GPU memory, then quantize to 4-bit for low-latency local inference.",
+    img: ragImg,
+    stack: ["PyTorch", "Transformers", "Unsloth", "llama.cpp"],
   },
 ];
 
@@ -33,12 +41,15 @@ export function Projects() {
   return (
     <section id="systems" className="px-6 md:px-10 mb-32 md:mb-40">
       <div className="max-w-7xl mx-auto">
-        <div data-reveal className="flex items-end justify-between mb-12 border-b border-border pb-6">
+        <div
+          data-reveal
+          className="flex items-end justify-between mb-12 border-b border-border pb-6"
+        >
           <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
-            Selected Architectural Work
+            Competitive AI Portfolio Systems
           </h2>
           <span className="font-mono text-[10px] text-muted-foreground/60 uppercase tracking-widest">
-            001 — 003
+            001 — 004
           </span>
         </div>
 
@@ -48,11 +59,11 @@ export function Projects() {
               key={p.n}
               data-reveal="scale"
               style={{ ["--reveal-delay" as string]: `${i * 120}ms` }}
-              className={`glass-card rounded-2xl p-6 md:p-8 group ${
-                i === 2 ? "md:col-span-2" : ""
+              className={`project-card glass-card rounded-2xl p-6 md:p-8 group ${
+                i >= 2 ? "md:col-span-2" : ""
               }`}
             >
-              <div className="mb-10 overflow-hidden rounded-xl bg-surface">
+              <div className="project-image-frame mb-10 overflow-hidden rounded-xl bg-surface">
                 <img
                   src={p.img}
                   alt={p.title}
@@ -60,8 +71,8 @@ export function Projects() {
                   width={1280}
                   height={960}
                   className={`w-full ${
-                    i === 2 ? "aspect-[21/9]" : "aspect-[4/3]"
-                  } object-cover transition-transform duration-700 ease-out group-hover:scale-105`}
+                    i >= 2 ? "aspect-[21/9]" : "aspect-[4/3]"
+                  } project-image object-cover`}
                 />
               </div>
 
@@ -72,9 +83,7 @@ export function Projects() {
                     <span className="h-px w-6 bg-border" />
                     <span>{p.tag}</span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight">
-                    {p.title}
-                  </h3>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight">{p.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed max-w-md text-pretty">
                     {p.desc}
                   </p>
@@ -82,14 +91,14 @@ export function Projects() {
                     {p.stack.map((s) => (
                       <span
                         key={s}
-                        className="px-2.5 py-1 text-[10px] font-mono border border-border rounded-full text-muted-foreground"
+                        className="stack-pill px-2.5 py-1 text-[10px] font-mono border border-border rounded-full text-muted-foreground"
                       >
                         {s}
                       </span>
                     ))}
                   </div>
                 </div>
-                <div className="shrink-0 size-12 rounded-full border border-border grid place-items-center group-hover:bg-foreground group-hover:text-background group-hover:rotate-45 transition-all duration-500">
+                <div className="project-arrow shrink-0 size-12 rounded-full border border-border grid place-items-center group-hover:bg-foreground group-hover:text-background">
                   <span className="text-xl leading-none">↗</span>
                 </div>
               </div>

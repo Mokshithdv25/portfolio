@@ -1,8 +1,24 @@
 const timeline = [
-  { year: "2024", title: "Senior AI Engineer", org: "Stealth — Agentic Systems" },
-  { year: "2023", title: "AI Engineer · RAG Lead", org: "Enterprise SaaS" },
-  { year: "2022", title: "MSc Artificial Intelligence & Business Management", org: "Distinction" },
-  { year: "2021", title: "ML Research Assistant", org: "University Lab" },
+  {
+    year: "2025",
+    title: "MS Artificial Intelligence in Business",
+    org: "Arizona State University · W. P. Carey",
+  },
+  {
+    year: "2024",
+    title: "Product Manager, Founding Member",
+    org: "Blip · AI notifications, RAG support, retention analytics",
+  },
+  {
+    year: "2023",
+    title: "Associate Product Manager",
+    org: "Cisco · contract intelligence, supplier workflows, $300M+ liability visibility",
+  },
+  {
+    year: "2022",
+    title: "Business Analyst",
+    org: "Cisco · Snowflake dashboards, risk scoring, executive decision systems",
+  },
 ];
 
 export function About() {
@@ -14,13 +30,14 @@ export function About() {
             Trajectory
           </h2>
           <h3 className="text-4xl md:text-5xl font-bold tracking-tighter leading-[0.95] mb-8">
-            Three years deep <br />
-            in the frontier of <span className="text-stroke">applied AI.</span>
+            Product judgment <br />
+            with <span className="text-stroke">AI systems depth.</span>
           </h3>
           <p className="text-muted-foreground leading-relaxed text-pretty">
-            A graduate of an Artificial Intelligence & Business Management program
-            with a sharp focus on production agentic systems. Operating in the top
-            10% of practitioners — measured by shipped systems, not titles.
+            Mokshith Kumar builds at the intersection of product strategy, data systems, and applied
+            AI. His work spans enterprise contract intelligence, supplier automation, AI-driven
+            lifecycle messaging, hybrid RAG support, agentic RevOps, and large-scale
+            voice-of-customer analysis over roughly one million app reviews.
           </p>
         </div>
 
@@ -31,7 +48,7 @@ export function About() {
                 key={t.year + t.title}
                 data-reveal="right"
                 style={{ ["--reveal-delay" as string]: `${i * 120}ms` }}
-                className="grid grid-cols-[80px_1fr] gap-6 py-6 border-b border-border last:border-b-0 group"
+                className="kinetic-list-row grid grid-cols-[80px_1fr] gap-6 py-6 border-b border-border last:border-b-0 group"
               >
                 <div className="font-mono text-sm text-muted-foreground group-hover:text-accent transition-colors">
                   {t.year}

@@ -5,6 +5,18 @@ export function useReveal<T extends HTMLElement = HTMLElement>(options?: Interse
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const targets = el.querySelectorAll<HTMLElement>("[data-reveal]");
+    el.dataset.revealRoot = "ready";
+
+    if (typeof IntersectionObserver === "undefined") {
+      targets.forEach((t) => {
+        t.dataset.revealed = "true";
+      });
+      return () => {
+        delete el.dataset.revealRoot;
+      };
+    }
+
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -14,12 +26,14 @@ export function useReveal<T extends HTMLElement = HTMLElement>(options?: Interse
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -10% 0px", ...options }
+      { threshold: 0.15, rootMargin: "0px 0px -10% 0px", ...options },
     );
-    const targets = el.querySelectorAll<HTMLElement>("[data-reveal]");
     targets.forEach((t) => io.observe(t));
-    return () => io.disconnect();
-  }, []);
+    return () => {
+      io.disconnect();
+      delete el.dataset.revealRoot;
+    };
+  }, [options]);
   return ref;
 }
 

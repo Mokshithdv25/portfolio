@@ -11,16 +11,17 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Axon — Senior AI Engineer · RAG & Agentic Systems" },
+      { title: "Mokshith Kumar — AI Product & Systems Portfolio" },
       {
         name: "description",
         content:
-          "Portfolio of a top-10% AI engineer specialising in production RAG pipelines and multi-agent orchestration. 3 years of industry, MSc AI & Business Management.",
+          "Portfolio of Mokshith Kumar, an AI product and data systems builder focused on production RAG, agentic workflows, LLMOps evaluation, and measurable business impact.",
       },
-      { property: "og:title", content: "Axon — Senior AI Engineer" },
+      { property: "og:title", content: "Mokshith Kumar — AI Product & Systems Portfolio" },
       {
         property: "og:description",
-        content: "Engineering high-fidelity RAG and agentic AI systems for the enterprise.",
+        content:
+          "Production-minded AI work across contract intelligence, agentic RevOps, support automation, and LLM evaluation.",
       },
     ],
   }),
@@ -45,7 +46,7 @@ function Index() {
         <Contact />
       </main>
       <footer className="p-8 text-center text-[10px] text-muted-foreground tracking-[0.25em] uppercase font-mono border-t border-border">
-        © 2026 Axon Intelligence Systems — Designed for the 10%
+        © 2026 Mokshith Kumar — AI Product, Data, and Systems
       </footer>
     </div>
   );
