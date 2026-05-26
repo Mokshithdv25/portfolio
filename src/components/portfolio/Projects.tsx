@@ -58,11 +58,14 @@ export function Projects() {
             <article
               key={p.n}
               data-reveal="scale"
+              data-scroll-motion
+              data-tilt={i % 2 === 0 ? "left" : "right"}
               style={{ ["--reveal-delay" as string]: `${i * 120}ms` }}
               className={`project-card glass-card rounded-2xl p-6 md:p-8 group ${
                 i >= 2 ? "md:col-span-2" : ""
               }`}
             >
+              <div className="project-bg-layer" aria-hidden />
               <div className="project-image-frame mb-10 overflow-hidden rounded-xl bg-surface">
                 <img
                   src={p.img}
@@ -75,6 +78,7 @@ export function Projects() {
                   } project-image object-cover`}
                 />
               </div>
+
 
               <div className="flex justify-between items-start gap-6">
                 <div className="flex-1">
