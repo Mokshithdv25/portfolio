@@ -30,23 +30,33 @@ export function useReveal<T extends HTMLElement = HTMLElement>(options?: Interse
     );
     targets.forEach((t) => io.observe(t));
 
-    // Scroll-driven motion: writes --p (0 -> 1 as element traverses viewport)
+    // Scroll-driven motion: writes --p (-1..1) only for in-view elements
     const motionTargets = Array.from(
       el.querySelectorAll<HTMLElement>("[data-scroll-motion]"),
     );
+    const visible = new Set<HTMLElement>();
+    const visIo = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) visible.add(e.target as HTMLElement);
+          else visible.delete(e.target as HTMLElement);
+        }
+      },
+      { rootMargin: "20% 0px 20% 0px" },
+    );
+    motionTargets.forEach((t) => visIo.observe(t));
+
     let raf = 0;
     const update = () => {
       raf = 0;
       const vh = window.innerHeight;
-      for (const t of motionTargets) {
+      const half = vh / 2;
+      visible.forEach((t) => {
         const r = t.getBoundingClientRect();
         const center = r.top + r.height / 2;
-        // -1 when below viewport, 0 at center, 1 when above
-        const p = Math.max(-1.2, Math.min(1.2, (vh / 2 - center) / (vh / 2 + r.height / 2)));
-        t.style.setProperty("--p", p.toFixed(4));
-        // 0..1 normalized
-        t.style.setProperty("--pn", ((p + 1) / 2).toFixed(4));
-      }
+        const p = Math.max(-1, Math.min(1, (half - center) / (half + r.height / 2)));
+        t.style.setProperty("--p", p.toFixed(3));
+      });
     };
     const onScroll = () => {
       if (!raf) raf = requestAnimationFrame(update);
@@ -57,11 +67,13 @@ export function useReveal<T extends HTMLElement = HTMLElement>(options?: Interse
 
     return () => {
       io.disconnect();
+      visIo.disconnect();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       if (raf) cancelAnimationFrame(raf);
       delete el.dataset.revealRoot;
     };
+
   }, [options]);
   return ref;
 }
