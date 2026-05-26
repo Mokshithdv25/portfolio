@@ -504,50 +504,36 @@
   }
   .project-bg-layer {
     position: absolute;
-    inset: -20%;
+    inset: -10%;
     z-index: 0;
     pointer-events: none;
     background:
       radial-gradient(
-        circle at calc(20% + var(--p) * 60%) calc(30% + var(--p) * 40%),
+        circle at 30% 30%,
         color-mix(in oklab, var(--accent) 38%, transparent),
         transparent 55%
       ),
       radial-gradient(
-        circle at calc(80% - var(--p) * 50%) calc(70% - var(--p) * 30%),
+        circle at 70% 70%,
         oklch(0.7 0.18 222 / 0.32),
         transparent 60%
-      ),
-      conic-gradient(
-        from calc(var(--p) * 180deg) at 50% 50%,
-        transparent 0%,
-        color-mix(in oklab, var(--accent-glow) 18%, transparent) 25%,
-        transparent 50%,
-        color-mix(in oklab, var(--accent) 14%, transparent) 75%,
-        transparent 100%
       );
-    filter: blur(60px) saturate(1.4);
-    opacity: calc(0.4 + abs(var(--p)) * 0.5);
-    transform: rotate(calc(var(--p) * 45deg)) scale(calc(1 + abs(var(--p)) * 0.3));
-    transition: opacity 200ms linear;
+    filter: blur(40px);
+    opacity: calc(0.4 + abs(var(--p)) * 0.4);
+    transform: translate3d(calc(var(--p) * -20px), calc(var(--p) * -16px), 0) rotate(calc(var(--p) * 20deg));
     mix-blend-mode: screen;
+    will-change: transform, opacity;
   }
   .project-card .project-image {
-    transform: scale(calc(1.05 + abs(var(--p)) * 0.08))
-      translate3d(0, calc(var(--p) * 18px), 0)
-      rotate(calc(var(--p) * 1.2deg));
-    filter: saturate(calc(1 + abs(var(--p)) * 0.4))
-      hue-rotate(calc(var(--p) * 25deg));
+    transform: scale(1.05) translate3d(0, calc(var(--p) * 14px), 0);
     transition: none;
+    will-change: transform;
   }
   .project-card:hover .project-image {
-    transform: scale(calc(1.15 + abs(var(--p)) * 0.08))
-      translate3d(0, calc(var(--p) * 18px), 0)
-      rotate(calc(var(--p) * 1.2deg + 0.75deg));
-    filter: saturate(calc(1.2 + abs(var(--p)) * 0.4))
-      hue-rotate(calc(var(--p) * 25deg))
-      contrast(1.08);
+    transform: scale(1.12) translate3d(0, calc(var(--p) * 14px), 0);
+    filter: saturate(1.15) contrast(1.05);
   }
+
 
   [data-reveal] {
 
