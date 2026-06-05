@@ -1,6 +1,10 @@
-import ragImg from "@/assets/project-rag.jpg";
-import agentsImg from "@/assets/project-agents.jpg";
-import vectorImg from "@/assets/project-vector.jpg";
+import ragContractImg from "@/assets/project-rag-contract.png";
+import agentOpsImg from "@/assets/project-agentops.png";
+import llmopsImg from "@/assets/project-llmops.png";
+import finetuneImg from "@/assets/project-finetune.png";
+import ventureImg from "@/assets/project-venture-new.png";
+import gridpulseImg from "@/assets/project-gridpulse.png";
+import topicIntelImg from "@/assets/project-topic-intel.png";
 
 const projects = [
   {
@@ -8,7 +12,7 @@ const projects = [
     title: "Production RAG Contract Intelligence",
     tag: "Query Routing · Re-Ranking",
     desc: "Hybrid RAG + relational search over 1,000+ supplier contracts, designed with query rewriting, source routing, sub-query decomposition, and re-ranking to surface liability without hallucinating in high-stakes decisions.",
-    img: ragImg,
+    img: ragContractImg,
     stack: ["LangGraph", "pgvector", "BGE Reranker", "SQL"],
   },
   {
@@ -16,7 +20,7 @@ const projects = [
     title: "EchoMind Agentic RevOps Engine",
     tag: "Graph Orchestration",
     desc: "Multi-agent content workflow for GTM teams: scraper, grader, RAG validator, LLM generator, and QA loop with stateful handoffs to raise content pass rate toward 85% while controlling hallucination risk.",
-    img: agentsImg,
+    img: agentOpsImg,
     stack: ["LangGraph", "PRAW", "Vector DB", "GA4 / GSC"],
   },
   {
@@ -24,7 +28,7 @@ const projects = [
     title: "LLMOps Guardrail Evaluation Pipeline",
     tag: "Reliability · Safety",
     desc: "CI-style evaluation layer for RAG and agent systems: malicious-prompt stress tests, faithfulness scoring, answer relevance, context precision, and dashboard exports so model behavior is tested like production software.",
-    img: vectorImg,
+    img: llmopsImg,
     stack: ["Ragas", "TruLens", "NeMo Guardrails", "W&B"],
   },
   {
@@ -32,8 +36,37 @@ const projects = [
     title: "Local Fine-Tuning Optimization Lab",
     tag: "QLoRA · Quantization",
     desc: "Build track for privacy-sensitive domain models: fine-tune Llama or Mistral on niche documentation with QLoRA, track loss and GPU memory, then quantize to 4-bit for low-latency local inference.",
-    img: ragImg,
+    img: finetuneImg,
     stack: ["PyTorch", "Transformers", "Unsloth", "llama.cpp"],
+  },
+  {
+    n: "05",
+    title: "Vantage Point — VC Investment Intelligence",
+    tag: "Thesis Generation · ML Prediction",
+    desc: "Streamlit investment intelligence dashboard that turns historical VC data into thesis-ready insights—exit efficiency, geographic capital density, sector deep dives, investor matchmaking, and a Random Forest startup success predictor.",
+    img: ventureImg,
+    stack: ["Streamlit", "Python", "scikit-learn", "Pandas"],
+    href: "https://github.com/Mokshithdv25/VentureCapital",
+    demo: "https://venturecapital-ujqvnjxgynh5y9ckpesqzi.streamlit.app/",
+  },
+  {
+    n: "06",
+    title: "GridPulse ML — EV Surge Risk Pipeline",
+    tag: "MLOps · CI/CD · Serving",
+    desc: "End-to-end production ML system that predicts EV charging station surge risk: reproducible data prep, shared feature engineering, validation gates, drift monitoring, FastAPI inference with Prometheus metrics, Docker, and GitHub Actions CI/CD—runnable with no external datasets or cloud accounts.",
+    img: gridpulseImg,
+    stack: ["FastAPI", "scikit-learn", "Docker", "GitHub Actions"],
+    href: "https://github.com/Mokshithdv25/end-to-end-prd-ML-pipeline",
+  },
+  {
+    n: "07",
+    title: "ChatGPT Review Topic Intelligence",
+    tag: "LDA · NMF · MLflow",
+    desc: "Streamlit app for large-scale ChatGPT app review analysis: upload a CSV, run LDA and NMF topic models, view aggregated theme distributions, and export predictions—with models trained in Colab and tracked in Databricks MLflow.",
+    img: topicIntelImg,
+    stack: ["Streamlit", "scikit-learn", "MLflow", "LDA / NMF"],
+    href: "https://github.com/Mokshithdv25/reviews_topic_app",
+    demo: "https://mokshithdv25-chatgpt-topic-app-app-newq6b.streamlit.app/",
   },
 ];
 
@@ -49,7 +82,7 @@ export function Projects() {
             Competitive AI Portfolio Systems
           </h2>
           <span className="font-mono text-[10px] text-muted-foreground/60 uppercase tracking-widest">
-            001 — 004
+            001 — 007
           </span>
         </div>
 
@@ -100,11 +133,33 @@ export function Projects() {
                         {s}
                       </span>
                     ))}
+                    {"demo" in p && p.demo ? (
+                      <a
+                        href={p.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="stack-pill px-2.5 py-1 text-[10px] font-mono border border-accent/40 rounded-full text-accent hover:bg-accent/10 transition-colors"
+                      >
+                        Live demo
+                      </a>
+                    ) : null}
                   </div>
                 </div>
-                <div className="project-arrow shrink-0 size-12 rounded-full border border-border grid place-items-center group-hover:bg-foreground group-hover:text-background">
-                  <span className="text-xl leading-none">↗</span>
-                </div>
+                {"href" in p && p.href ? (
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${p.title} on GitHub`}
+                    className="project-arrow shrink-0 size-12 rounded-full border border-border grid place-items-center group-hover:bg-foreground group-hover:text-background"
+                  >
+                    <span className="text-xl leading-none">↗</span>
+                  </a>
+                ) : (
+                  <div className="project-arrow shrink-0 size-12 rounded-full border border-border grid place-items-center group-hover:bg-foreground group-hover:text-background">
+                    <span className="text-xl leading-none">↗</span>
+                  </div>
+                )}
               </div>
             </article>
           ))}
