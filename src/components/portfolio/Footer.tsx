@@ -127,7 +127,7 @@ export function Footer() {
             MOKSHITH KUMAR
           </h2>
           <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
-            AI Product · Data Systems · Enterprise AI
+            AI-first · Data · Product
           </p>
         </div>
 

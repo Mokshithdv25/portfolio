@@ -6,14 +6,15 @@ export function Contact() {
           <div className="contact-core p-px rounded-3xl bg-gradient-to-tr from-accent via-accent-glow to-blue-400">
             <div className="bg-base px-8 md:px-16 py-14 md:py-20 rounded-3xl">
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">
-                Open To Competitive AI Roles
+                Open To AI, Data & Product Roles
               </p>
               <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6">
                 Build systems <br className="md:hidden" /> that ship.
               </h2>
               <p className="text-muted-foreground mb-10 max-w-md mx-auto">
-                Targeting AI Product Manager, AI Application Developer, and Full-Stack AI Engineer
-                roles where product sense and production AI depth both matter.
+                Targeting AI engineer, data/ML, analytics, and AI product roles where RAG,
+                agents, ML systems, experimentation, SQL, dashboards, and business metrics all
+                matter.
               </p>
               <a
                 href="mailto:mokshithdv@gmail.com"
@@ -27,9 +28,9 @@ export function Contact() {
         <div className="flex flex-wrap justify-center gap-3 text-muted-foreground font-mono text-[10px] uppercase tracking-[0.25em]">
           <span>San Jose / Phoenix</span>
           <span className="text-accent">•</span>
-          <span>Enterprise AI</span>
+          <span>AI-first systems</span>
           <span className="text-accent">•</span>
-          <span>Startups</span>
+          <span>Data + product</span>
         </div>
       </div>
     </section>

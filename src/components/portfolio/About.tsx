@@ -30,14 +30,14 @@ export function About() {
             Trajectory
           </h2>
           <h3 className="text-4xl md:text-5xl font-bold tracking-tighter leading-[0.95] mb-8">
-            Product judgment <br />
-            with <span className="text-stroke">AI systems depth.</span>
+            AI-first builder <br />
+            with <span className="text-stroke">data + product depth.</span>
           </h3>
           <p className="text-muted-foreground leading-relaxed text-pretty">
-            Mokshith Kumar builds at the intersection of product strategy, data systems, and applied
-            AI. His work spans enterprise contract intelligence, supplier automation, AI-driven
-            lifecycle messaging, hybrid RAG support, agentic RevOps, and large-scale
-            voice-of-customer analysis over roughly one million app reviews.
+            Mokshith Kumar works across the overlap of AI engineering, data science, analytics
+            engineering, and product strategy. His portfolio spans enterprise contract intelligence,
+            agentic RevOps, production ML, experimentation, modern data stacks, and
+            voice-of-customer analysis that turns reviews into PRD-ready product decisions.
           </p>
         </div>
 

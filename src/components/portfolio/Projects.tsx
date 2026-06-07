@@ -1,72 +1,94 @@
-import ragContractImg from "@/assets/project-rag-contract.png";
-import agentOpsImg from "@/assets/project-agentops.png";
-import llmopsImg from "@/assets/project-llmops.png";
-import finetuneImg from "@/assets/project-finetune.png";
-import ventureImg from "@/assets/project-venture-new.png";
-import gridpulseImg from "@/assets/project-gridpulse.png";
-import topicIntelImg from "@/assets/project-topic-intel.png";
+import ragContractImg from "@/assets/project-rag-contract-v2.png";
+import agentOpsImg from "@/assets/project-agentops-v2.png";
+import gridpulseImg from "@/assets/project-gridpulse-v2.png";
+import prdCopilotImg from "@/assets/project-prd-copilot-v2.png";
+import experimentImg from "@/assets/project-experimentation-growth-v2.png";
+import warehouseImg from "@/assets/project-data-warehouse-v2.png";
 
 const projects = [
   {
     n: "01",
     title: "Production RAG Contract Intelligence",
-    tag: "Query Routing · Re-Ranking",
-    desc: "Hybrid RAG + relational search over 1,000+ supplier contracts, designed with query rewriting, source routing, sub-query decomposition, and re-ranking to surface liability without hallucinating in high-stakes decisions.",
+    tag: "Query Routing · Reranking",
+    desc: "Enterprise contract intelligence system for grounded answers over supplier agreements.",
     img: ragContractImg,
     stack: ["LangGraph", "pgvector", "BGE Reranker", "SQL"],
+    proof: [
+      { label: "Problem", text: "Manual contract review made liability discovery slow, inconsistent, and hard to audit." },
+      { label: "Architecture", text: "SQL filters, vector retrieval, query rewriting, reranking, and cited answer generation." },
+      { label: "Result", text: "$300M+ liability visibility with source-backed clauses for executive decisions." },
+    ],
   },
   {
     n: "02",
-    title: "EchoMind Agentic RevOps Engine",
+    title: "Reddit Pulse — Agentic RevOps Engine",
     tag: "Graph Orchestration",
-    desc: "Multi-agent content workflow for GTM teams: scraper, grader, RAG validator, LLM generator, and QA loop with stateful handoffs to raise content pass rate toward 85% while controlling hallucination risk.",
+    desc: "Agentic RevOps workflow that turns Reddit and search signals into qualified GTM content.",
     img: agentOpsImg,
     stack: ["LangGraph", "PRAW", "Vector DB", "GA4 / GSC"],
+    href: "https://github.com/Mokshithdv25/reddit-pulse",
+    proof: [
+      { label: "Problem", text: "GTM teams lose time moving between scraping, scoring, drafting, and manual QA." },
+      { label: "Architecture", text: "Specialized agents handle ingest, grading, RAG validation, generation, and approval." },
+      { label: "Result", text: "Designed to lift pass rate toward 85% while reducing hallucination risk." },
+    ],
   },
   {
     n: "03",
-    title: "LLMOps Guardrail Evaluation Pipeline",
-    tag: "Reliability · Safety",
-    desc: "CI-style evaluation layer for RAG and agent systems: malicious-prompt stress tests, faithfulness scoring, answer relevance, context precision, and dashboard exports so model behavior is tested like production software.",
-    img: llmopsImg,
-    stack: ["Ragas", "TruLens", "NeMo Guardrails", "W&B"],
+    title: "ChatGPT Reviews to PRD Copilot",
+    tag: "Product AI · VoC Analytics",
+    desc: "AI product tool that converts user reviews into PRD-ready roadmap inputs.",
+    img: prdCopilotImg,
+    stack: ["Streamlit", "scikit-learn", "OpenAI API", "MLflow"],
+    href: "https://github.com/Mokshithdv25/reviews_topic_app",
+    demo: "https://mokshithdv25-chatgpt-topic-app-app-newq6b.streamlit.app/",
+    proof: [
+      { label: "Problem", text: "Review data is noisy and difficult to translate into clear product priorities." },
+      { label: "Architecture", text: "Topic modeling, sentiment signals, AI synthesis, PRD sections, and metric framing." },
+      { label: "Result", text: "Turns customer feedback into prioritized features, goals, and success metrics." },
+    ],
   },
   {
     n: "04",
-    title: "Local Fine-Tuning Optimization Lab",
-    tag: "QLoRA · Quantization",
-    desc: "Build track for privacy-sensitive domain models: fine-tune Llama or Mistral on niche documentation with QLoRA, track loss and GPU memory, then quantize to 4-bit for low-latency local inference.",
-    img: finetuneImg,
-    stack: ["PyTorch", "Transformers", "Unsloth", "llama.cpp"],
-  },
-  {
-    n: "05",
-    title: "Vantage Point — VC Investment Intelligence",
-    tag: "Thesis Generation · ML Prediction",
-    desc: "Streamlit investment intelligence dashboard that turns historical VC data into thesis-ready insights—exit efficiency, geographic capital density, sector deep dives, investor matchmaking, and a Random Forest startup success predictor.",
-    img: ventureImg,
-    stack: ["Streamlit", "Python", "scikit-learn", "Pandas"],
-    href: "https://github.com/Mokshithdv25/VentureCapital",
-    demo: "https://venturecapital-ujqvnjxgynh5y9ckpesqzi.streamlit.app/",
-  },
-  {
-    n: "06",
     title: "GridPulse ML — EV Surge Risk Pipeline",
     tag: "MLOps · CI/CD · Serving",
-    desc: "End-to-end production ML system that predicts EV charging station surge risk: reproducible data prep, shared feature engineering, validation gates, drift monitoring, FastAPI inference with Prometheus metrics, Docker, and GitHub Actions CI/CD—runnable with no external datasets or cloud accounts.",
+    desc: "Production ML pipeline for predicting EV charging station surge risk.",
     img: gridpulseImg,
     stack: ["FastAPI", "scikit-learn", "Docker", "GitHub Actions"],
     href: "https://github.com/Mokshithdv25/end-to-end-prd-ML-pipeline",
+    proof: [
+      { label: "Problem", text: "Operators need early warnings before demand spikes overload stations and routes." },
+      { label: "Architecture", text: "Raw data prep, feature engineering, validation gates, API serving, and drift checks." },
+      { label: "Result", text: "Deployable FastAPI service with risk scores, recommendations, and monitoring metrics." },
+    ],
   },
   {
-    n: "07",
-    title: "ChatGPT Review Topic Intelligence",
-    tag: "LDA · NMF · MLflow",
-    desc: "Streamlit app for large-scale ChatGPT app review analysis: upload a CSV, run LDA and NMF topic models, view aggregated theme distributions, and export predictions—with models trained in Colab and tracked in Databricks MLflow.",
-    img: topicIntelImg,
-    stack: ["Streamlit", "scikit-learn", "MLflow", "LDA / NMF"],
-    href: "https://github.com/Mokshithdv25/reviews_topic_app",
-    demo: "https://mokshithdv25-chatgpt-topic-app-app-newq6b.streamlit.app/",
+    n: "05",
+    title: "Experimentation & Growth Analytics Lab",
+    tag: "A/B Testing · Causal Metrics",
+    desc: "Data science lab for turning A/B tests into product growth decisions.",
+    img: experimentImg,
+    stack: ["Python", "SQL", "Statsmodels", "Product Metrics"],
+    href: "https://github.com/Mokshithdv25/Experimentation-Growth-Analytics-Platform",
+    proof: [
+      { label: "Problem", text: "Teams need evidence for ship, hold, or iterate decisions beyond vanity metrics." },
+      { label: "Architecture", text: "Power analysis, funnel SQL, uplift estimates, confidence intervals, and guardrails." },
+      { label: "Result", text: "Decision readout connects statistical lift to revenue, retention, and risk metrics." },
+    ],
+  },
+  {
+    n: "06",
+    title: "Databricks Lakehouse MLflow Platform",
+    tag: "Databricks · Delta Lake · BI",
+    desc: "Lakehouse analytics platform for trusted product, customer, and revenue KPIs with MLflow tracking.",
+    img: warehouseImg,
+    stack: ["Databricks", "PySpark", "Delta Lake", "MLflow", "SQL / BI"],
+    href: "https://github.com/Mokshithdv25/Databricks-Lakehouse-MLflow-Platform",
+    proof: [
+      { label: "Problem", text: "Raw operational data is too messy for reliable executive reporting and analysis." },
+      { label: "Architecture", text: "PySpark ETL, Delta Lake tables, MLflow tracking, quality tests, and marts." },
+      { label: "Result", text: "Lakehouse-ready BI layer with trusted KPI definitions and freshness checks." },
+    ],
   },
 ];
 
@@ -79,14 +101,14 @@ export function Projects() {
           className="flex items-end justify-between mb-12 border-b border-border pb-6"
         >
           <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
-            Competitive AI Portfolio Systems
+            AI, Data & Product Portfolio Systems
           </h2>
           <span className="font-mono text-[10px] text-muted-foreground/60 uppercase tracking-widest">
-            001 — 007
+            001 — 006
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           {projects.map((p, i) => (
             <article
               key={p.n}
@@ -94,36 +116,40 @@ export function Projects() {
               data-scroll-motion
               data-tilt={i % 2 === 0 ? "left" : "right"}
               style={{ ["--reveal-delay" as string]: `${i * 120}ms` }}
-              className={`project-card glass-card rounded-2xl p-6 md:p-8 group ${
-                i >= 2 ? "md:col-span-2" : ""
-              }`}
+              className="project-card glass-card rounded-2xl p-5 md:p-6 group"
             >
               <div className="project-bg-layer" aria-hidden />
-              <div className="project-image-frame mb-10 overflow-hidden rounded-xl bg-surface">
+              <div className="project-image-frame mb-7 overflow-hidden rounded-xl bg-surface">
                 <img
                   src={p.img}
                   alt={p.title}
                   loading="lazy"
                   width={1280}
                   height={960}
-                  className={`w-full ${
-                    i >= 2 ? "aspect-[21/9]" : "aspect-[4/3]"
-                  } project-image object-cover`}
+                  className="w-full aspect-[16/10] project-image object-cover"
                 />
               </div>
 
 
               <div className="flex justify-between items-start gap-6">
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                  <div className="flex items-center gap-2 md:gap-3 mb-3 font-mono text-[9px] md:text-[10px] uppercase tracking-[0.14em] md:tracking-[0.2em] text-muted-foreground">
                     <span className="text-accent">{p.n}</span>
                     <span className="h-px w-6 bg-border" />
                     <span>{p.tag}</span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight">{p.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed max-w-md text-pretty">
+                  <h3 className="text-2xl font-bold mb-3 tracking-tight">{p.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed max-w-xl text-pretty">
                     {p.desc}
                   </p>
+                  <div className="project-proof-grid mt-6">
+                    {p.proof.map((item) => (
+                      <div key={item.label} className="project-proof-item">
+                        <span>{item.label}</span>
+                        <p>{item.text}</p>
+                      </div>
+                    ))}
+                  </div>
                   <div className="flex flex-wrap gap-2 mt-5">
                     {p.stack.map((s) => (
                       <span
@@ -151,13 +177,13 @@ export function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`View ${p.title} on GitHub`}
-                    className="project-arrow shrink-0 size-12 rounded-full border border-border grid place-items-center group-hover:bg-foreground group-hover:text-background"
+                    className="project-readme-link shrink-0 inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-[10px] font-mono uppercase tracking-[0.16em] text-muted-foreground group-hover:bg-foreground group-hover:text-background"
                   >
-                    <span className="text-xl leading-none">↗</span>
+                    README <span className="text-sm leading-none">↗</span>
                   </a>
                 ) : (
-                  <div className="project-arrow shrink-0 size-12 rounded-full border border-border grid place-items-center group-hover:bg-foreground group-hover:text-background">
-                    <span className="text-xl leading-none">↗</span>
+                  <div className="project-readme-link shrink-0 inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-[10px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
+                    Company project
                   </div>
                 )}
               </div>

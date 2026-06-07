@@ -1,10 +1,10 @@
 const skills = [
   { name: "RAG & Query Transformation", level: "Router / Re-ranker" },
-  { name: "Agentic Orchestration", level: "LangGraph / CrewAI" },
-  { name: "LLMOps Evaluation", level: "Ragas / TruLens" },
-  { name: "Product Analytics", level: "PostHog / GA4" },
-  { name: "Data Products", level: "SQL / Snowflake / BI" },
-  { name: "Model Optimization", level: "QLoRA / Unsloth" },
+  { name: "Agentic Workflows", level: "Tools / Roles / Handoffs" },
+  { name: "Product PRDs & Metrics", level: "VoC / Prioritization" },
+  { name: "Experimentation", level: "A/B / Causal Analysis" },
+  { name: "ML Systems", level: "FastAPI / Docker / CI" },
+  { name: "Data Engineering & BI", level: "SQL / dbt / Warehouse" },
 ];
 
 export function Capabilities() {
@@ -42,16 +42,16 @@ export function Capabilities() {
 
           <div className="lg:col-span-5 flex flex-col justify-center gap-6" data-reveal="right">
             <blockquote className="text-xl md:text-2xl font-light italic text-foreground/80 leading-snug tracking-tight">
-              <span className="text-accent">"</span>I build AI products where model behavior is
-              measured against business outcomes: liability exposure, support latency, engagement
-              lift, and hallucination risk.<span className="text-accent">"</span>
+              <span className="text-accent">"</span>I build AI systems with data discipline and
+              product judgment: grounded answers, measurable workflows, clean metrics, and decisions
+              that can be defended.<span className="text-accent">"</span>
             </blockquote>
             <p className="text-sm text-muted-foreground leading-relaxed border-l border-border pl-4">
-              AI that can&apos;t be measured doesn&apos;t survive production — evaluation and
-              business metrics come first, benchmarks second.
+              The common thread is measurement: retrieval quality, model performance, experiment
+              impact, product success metrics, and business outcomes.
             </p>
             <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-              — Product + AI Systems Operating Principle
+              — AI + Data + Product Operating Principle
             </p>
           </div>
         </div>

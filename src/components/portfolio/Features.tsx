@@ -3,7 +3,7 @@ const features = [
     id: "rag",
     icon: "⬡",
     title: "Production RAG",
-    subtitle: "Query Routing · Re-Ranking",
+    subtitle: "Query Routing · Reranking",
     desc: "Hybrid retrieval with sub-query decomposition, BM25+vector fusion, and BGE re-ranking. Built to surface facts without hallucinating on high-stakes decisions.",
     accentHue: "305",
   },
@@ -18,33 +18,33 @@ const features = [
   {
     id: "llmops",
     icon: "⊕",
-    title: "LLMOps Evaluation",
-    subtitle: "Ragas · TruLens · W&B",
-    desc: "CI-style eval harness: faithfulness, context precision, answer relevance, malicious-prompt stress testing, and drift monitoring.",
+    title: "Product AI",
+    subtitle: "PRD · VoC · Metrics",
+    desc: "Review mining, structured synthesis, prioritization, PRD creation, and success metrics tied to real user problems.",
     accentHue: "280",
   },
   {
     id: "data",
     icon: "▦",
-    title: "Data Products",
-    subtitle: "SQL · Snowflake · BI",
-    desc: "Executive decision dashboards, risk-scoring pipelines, and dbt data models that power $300M+ in liability visibility.",
+    title: "ML Systems",
+    subtitle: "FastAPI · Docker · CI/CD",
+    desc: "Feature engineering, validation gates, model serving, monitoring, and deployment artifacts for production-minded ML.",
     accentHue: "220",
   },
   {
-    id: "finetune",
+    id: "experimentation",
     icon: "⊗",
-    title: "Model Optimization",
-    subtitle: "QLoRA · Quantization",
-    desc: "Fine-tune Llama/Mistral on proprietary docs with QLoRA, then quantize to 4-bit for sub-100ms local inference.",
+    title: "Experimentation",
+    subtitle: "A/B · Uplift · Causal",
+    desc: "Power analysis, confidence intervals, funnel metrics, guardrails, and decision readouts for product growth.",
     accentHue: "150",
   },
   {
     id: "analytics",
     icon: "◉",
-    title: "Product Analytics",
-    subtitle: "PostHog · GA4 · Mixpanel",
-    desc: "Behavioral cohort analysis, funnel modeling, and LLM-assisted VoC analysis over 1M+ app reviews.",
+    title: "Data Stack & BI",
+    subtitle: "SQL · dbt · Warehouse",
+    desc: "ETL orchestration, dimensional modeling, data quality checks, KPI dashboards, and executive reporting.",
     accentHue: "40",
   },
 ];
@@ -112,7 +112,7 @@ export function Features() {
               What I Build With
             </div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
-              Production AI <span className="text-stroke">disciplines.</span>
+              AI-first <span className="text-stroke">data + product disciplines.</span>
             </h2>
           </div>
           <span className="font-mono text-[10px] text-muted-foreground/60 uppercase tracking-widest hidden md:block">

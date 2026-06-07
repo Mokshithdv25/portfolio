@@ -14,20 +14,20 @@ export const Route = createFileRoute("/")(
     component: Index,
     head: () => ({
       meta: [
-        { title: "Mokshith Kumar — AI Product & Systems Portfolio" },
+        { title: "Mokshith Kumar — AI, Data & Product Portfolio" },
         {
           name: "description",
           content:
-            "Portfolio of Mokshith Kumar, an AI product and data systems builder focused on production RAG, agentic workflows, LLMOps evaluation, and measurable business impact.",
+            "Portfolio of Mokshith Kumar, an AI-first builder at the intersection of data, AI, and product, focused on RAG, agents, ML systems, experimentation, and measurable business impact.",
         },
         {
           property: "og:title",
-          content: "Mokshith Kumar — AI Product & Systems Portfolio",
+          content: "Mokshith Kumar — AI, Data & Product Portfolio",
         },
         {
           property: "og:description",
           content:
-            "Production-minded AI work across contract intelligence, agentic RevOps, support automation, and LLM evaluation.",
+            "AI-first portfolio across RAG contract intelligence, agentic RevOps, product PRDs, production ML, experimentation, and modern data stacks.",
         },
       ],
     }),
