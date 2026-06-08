@@ -26,8 +26,6 @@ export function Contact() {
           </div>
         </div>
         <div className="flex flex-wrap justify-center gap-3 text-muted-foreground font-mono text-[10px] uppercase tracking-[0.25em]">
-          <span>San Jose / Phoenix</span>
-          <span className="text-accent">•</span>
           <span>AI-first systems</span>
           <span className="text-accent">•</span>
           <span>Data + product</span>

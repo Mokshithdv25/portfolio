@@ -140,7 +140,7 @@ export function Footer() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
             </span>
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-              Open to AI Roles · San Jose / Phoenix · Remote
+              Open to AI, Data & Product Roles
             </span>
           </div>
 

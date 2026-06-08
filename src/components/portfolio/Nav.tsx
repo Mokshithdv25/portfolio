@@ -2,7 +2,6 @@ export function Nav() {
   const links = [
     { href: "#systems", label: "Projects" },
     { href: "#features", label: "Capabilities" },
-    { href: "#capabilities", label: "Expertise" },
     { href: "#about", label: "About" },
     { href: "#contact", label: "Contact" },
   ];

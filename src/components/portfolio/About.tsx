@@ -2,22 +2,17 @@ const timeline = [
   {
     year: "2025",
     title: "MS Artificial Intelligence in Business",
-    org: "Arizona State University · W. P. Carey",
-  },
-  {
-    year: "2024",
-    title: "Product Manager, Founding Member",
-    org: "Blip · AI notifications, RAG support, retention analytics",
+    org: "Machine learning, unstructured data analytics, transformers, NLP, agentic AI, computer vision, AI business strategy, data governance, SQL, data warehousing",
   },
   {
     year: "2023",
-    title: "Associate Product Manager",
-    org: "Cisco · contract intelligence, supplier workflows, $300M+ liability visibility",
+    title: "Product Manager",
+    org: "AI products, RAG contract intelligence, supplier workflows, $300M+ liability impact, business metrics, stakeholder delivery",
   },
   {
     year: "2022",
     title: "Business Analyst",
-    org: "Cisco · Snowflake dashboards, risk scoring, executive decision systems",
+    org: "SQL, Tableau, Snowflake, predictive analytics, machine learning, dashboards, KPI reporting, executive decision systems",
   },
 ];
 
@@ -33,12 +28,6 @@ export function About() {
             AI-first builder <br />
             with <span className="text-stroke">data + product depth.</span>
           </h3>
-          <p className="text-muted-foreground leading-relaxed text-pretty">
-            Mokshith Kumar works across the overlap of AI engineering, data science, analytics
-            engineering, and product strategy. His portfolio spans enterprise contract intelligence,
-            agentic RevOps, production ML, experimentation, modern data stacks, and
-            voice-of-customer analysis that turns reviews into PRD-ready product decisions.
-          </p>
         </div>
 
         <div className="lg:col-span-7 lg:pt-14">
