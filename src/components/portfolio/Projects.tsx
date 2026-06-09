@@ -1,3 +1,4 @@
+import { Building2, ExternalLink, Github } from "lucide-react";
 import ragContractImg from "@/assets/project-rag-contract-v2.png";
 import agentOpsImg from "@/assets/project-agentops-v2.png";
 import gridpulseImg from "@/assets/project-gridpulse-v2.png";
@@ -131,8 +132,8 @@ export function Projects() {
               </div>
 
 
-              <div className="flex justify-between items-start gap-6">
-                <div className="flex-1">
+              <div className="flex flex-col gap-5">
+                <div>
                   <div className="flex items-center gap-2 md:gap-3 mb-3 font-mono text-[9px] md:text-[10px] uppercase tracking-[0.14em] md:tracking-[0.2em] text-muted-foreground">
                     <span className="text-accent">{p.n}</span>
                     <span className="h-px w-6 bg-border" />
@@ -159,33 +160,38 @@ export function Projects() {
                         {s}
                       </span>
                     ))}
-                    {"demo" in p && p.demo ? (
-                      <a
-                        href={p.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="stack-pill px-2.5 py-1 text-[10px] font-mono border border-accent/40 rounded-full text-accent hover:bg-accent/10 transition-colors"
-                      >
-                        Live demo
-                      </a>
-                    ) : null}
                   </div>
                 </div>
-                {"href" in p && p.href ? (
-                  <a
-                    href={p.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${p.title} on GitHub`}
-                    className="project-readme-link shrink-0 inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-[10px] font-mono uppercase tracking-[0.16em] text-muted-foreground group-hover:bg-foreground group-hover:text-background"
-                  >
-                    README <span className="text-sm leading-none">↗</span>
-                  </a>
-                ) : (
-                  <div className="project-readme-link shrink-0 inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-[10px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
-                    Company project
-                  </div>
-                )}
+                <div className="flex flex-wrap items-center gap-3 border-t border-border/70 pt-5">
+                  {"href" in p && p.href ? (
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${p.title} GitHub repository`}
+                      className="project-readme-link inline-flex items-center gap-2 rounded-full border border-accent/50 bg-accent/10 px-4 py-2.5 text-[10px] font-mono uppercase tracking-[0.16em] text-accent hover:bg-foreground hover:text-background"
+                    >
+                      <Github className="size-3.5" strokeWidth={1.8} />
+                      View GitHub
+                    </a>
+                  ) : (
+                    <div className="project-readme-link inline-flex items-center gap-2 rounded-full border border-border px-4 py-2.5 text-[10px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
+                      <Building2 className="size-3.5" strokeWidth={1.8} />
+                      Company project
+                    </div>
+                  )}
+                  {"demo" in p && p.demo ? (
+                    <a
+                      href={p.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-readme-link inline-flex items-center gap-2 rounded-full border border-border px-4 py-2.5 text-[10px] font-mono uppercase tracking-[0.16em] text-muted-foreground hover:bg-foreground hover:text-background"
+                    >
+                      <ExternalLink className="size-3.5" strokeWidth={1.8} />
+                      Live Demo
+                    </a>
+                  ) : null}
+                </div>
               </div>
             </article>
           ))}
